@@ -1,0 +1,35 @@
+.mainCard{
+    width: 400px;
+    height: 400px;
+    background-color: orange;
+    margin:auto;
+    margin-top: 70px;
+    border-radius: 20px;
+}
+
+.flex{
+    display:"flex";
+    justify-content: center;
+    align-items: center;
+}
+
+.input{
+    margin: 0 10%;
+    margin-top: 20px;
+    height: 30px;
+    border-radius: 50px;
+    border:none;
+    outline: none;
+    width: 300px;
+    padding-left: 20px;
+    font-size: 19px;
+}
+
+.pending{
+    margin: 0 10%;
+    margin-top: 20px;
+}
+
+.heading{
+    text-align: left;
+}
