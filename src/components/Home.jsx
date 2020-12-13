@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styles from './style.module.css'
 import { useDispatch, useSelector } from 'react-redux';
-import { addTodo } from '../redux/actions'
+import { addTodo, removeAllTodo } from '../redux/actions'
 import PendingItem from './PendingItem'
 import CompletedItem from './CompletedItem'
 import { v4 as uuidv4 } from 'uuid';
@@ -24,12 +24,16 @@ export default function Home() {
             dispatch(addTodo(payload))
             setInput("")
         }
-
     }
 
     return (
         <div className={styles.flex}>
             <div className={styles.mainCard}>
+
+                <div className={styles.resetContainer}>
+                    <div className={styles.resetButton} onClick={() => dispatch(removeAllTodo())}>Reset</div>
+                </div>
+
                 <input value={input} onKeyPress={(e) => handleEnter(e)} onChange={(e) => setInput(e.target.value)} className={styles.input}></input>
 
                 <div className={styles.pending} style={{ minHeight: "100px" }}>

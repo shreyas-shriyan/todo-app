@@ -41,6 +41,21 @@
     text-align: left;
 }
 
+.resetContainer{
+    display: flex;
+    justify-content: flex-end;
+    width:auto;
+    margin: 0 10%;
+    margin-top: 20px;
+}
+
+.resetButton{
+    background-color:white;
+    padding:7px;
+    border-radius:20px;
+    margin-top: 10px;
+}
+
 .pendingItem{
     background-color: white;
     padding: 9px;
