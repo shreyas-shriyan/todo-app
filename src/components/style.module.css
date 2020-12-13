@@ -21,6 +21,7 @@
     border:none;
     outline: none;
     width: 300px;
+    padding: 4px;
     padding-left: 20px;
     font-size: 19px;
 }
@@ -32,4 +33,11 @@
 
 .heading{
     text-align: left;
+}
+
+.pendingItem{
+    background-color: white;
+    padding: 9px;
+    margin: 10px;
+    border-radius: 20px;
 }

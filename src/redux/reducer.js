@@ -1,7 +1,7 @@
 import { ADD_TODO } from './actionTypes';
 
 const initialState = {
-    todo: []
+    pending: []
 };
 
 export default function reducer(state = initialState, action) {
@@ -9,7 +9,7 @@ export default function reducer(state = initialState, action) {
         case ADD_TODO:
             return {
                 ...state,
-                todo: [...state.todo, action.payload]
+                pending: [...state.pending, action.payload]
             };
 
         default:
