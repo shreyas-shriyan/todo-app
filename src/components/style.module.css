@@ -1,6 +1,6 @@
 .mainCard{
     width: 400px;
-    height: 400px;
+    min-height: 400px;
     background-color: orange;
     margin:auto;
     margin-top: 70px;
@@ -31,6 +31,12 @@
     margin-top: 20px;
 }
 
+.completed{
+    margin: 0 10%;
+    margin-top: 20px;
+    padding-bottom: 20px;
+}
+
 .heading{
     text-align: left;
 }
@@ -40,4 +46,13 @@
     padding: 9px;
     margin: 10px;
     border-radius: 20px;
+}
+
+.completedItem{
+    background-color: rgb(157, 199, 30);
+    padding: 9px;
+    margin: 10px;
+    border-radius: 20px;
+    color: white;
+    border: 1px solid white;
 }
