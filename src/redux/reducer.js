@@ -1,8 +1,9 @@
-import { ADD_TODO, COMPLETE_TODO, REMOVE_ALL_TODO, LOAD_FROM_LOCAL } from './actionTypes';
+import { ADD_TODO, COMPLETE_TODO, REMOVE_ALL_TODO, LOAD_FROM_LOCAL, ADD_HASHTAG_ITEM, CHANGE_HASHTAG_ITEM } from './actionTypes';
 
 const initialState = {
     pending: [],
-    completed: []
+    completed: [],
+    hashtagItems: [],
 };
 
 export default function reducer(state = initialState, action) {
@@ -15,7 +16,6 @@ export default function reducer(state = initialState, action) {
             };
 
         case COMPLETE_TODO:
-
             let tempPending = state.pending.filter((item) => item.id !== action.payload.id)
             localStorage.setItem("todoData", JSON.stringify({ ...state, pending: tempPending, completed: [...state.completed, action.payload] }))
             return {
@@ -25,16 +25,31 @@ export default function reducer(state = initialState, action) {
             };
 
         case REMOVE_ALL_TODO:
-            localStorage.setItem("todoData", JSON.stringify({ pending: [], completed: [] }))
+            localStorage.setItem("todoData", JSON.stringify({ pending: [], completed: [], hashtagItems: [] }))
             return {
                 ...state,
                 pending: [],
-                completed: []
+                completed: [],
+                hashtagItems: [],
             };
 
         case LOAD_FROM_LOCAL:
             return {
                 ...action.payload
+            };
+
+        case ADD_HASHTAG_ITEM:
+            return {
+                ...state,
+                hashtagItems: [...state.hashtagItems, action.payload]
+            };
+
+        case CHANGE_HASHTAG_ITEM:
+            let temp = state.hashtagItems.filter((item) => item.id === action.payload.id ? action.payload : item);
+            console.log(temp)
+            return {
+                ...state,
+                hashtagItems: temp
             };
 
         default:
