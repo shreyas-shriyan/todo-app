@@ -8,10 +8,10 @@ A todo app with hashtag feature to filter results.
 ## Screenshots
 
 <p align="center">
-  <img src="https://github.com/shreyas-shriyan/cdn/blob/master/assest-manager.gif?raw=true" alt="search" >
+  <img src="https://github.com/shreyas-shriyan/cdn/blob/master/todo.png?raw=true" alt="todo" >
 </p>
 
-## Installing and Running
+## Installing and Running Locally
 
 1. To get started, install your dependencies
 ```
