@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styles from './style.module.css'
 import { useDispatch, useSelector } from 'react-redux';
-import { addTodo, removeAllTodo } from '../redux/actions'
+import { addTodo, removeAllTodo, loadFromLocal } from '../redux/actions'
 import PendingItem from './PendingItem'
 import CompletedItem from './CompletedItem'
 import { v4 as uuidv4 } from 'uuid';
@@ -13,6 +13,13 @@ export default function Home() {
 
     let pending = useSelector((state) => state.pending)
     let completed = useSelector((state) => state.completed)
+
+    useEffect(() => {
+        let data = JSON.parse(localStorage.getItem("todoData"))
+        if (data) {
+            dispatch(loadFromLocal(data))
+        }
+    }, [])
 
     const handleEnter = (e) => {
         let payload = {
