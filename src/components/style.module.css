@@ -28,7 +28,7 @@
 
 .pending{
     margin: 0 10%;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .completed{
@@ -38,7 +38,8 @@
 }
 
 .heading{
-    text-align: left;
+    font-size: 30px;
+    font-weight: bold;
 }
 
 .resetContainer{
@@ -70,4 +71,17 @@
     border-radius: 20px;
     color: white;
     border: 1px solid white;
+}
+
+.hashtag{
+        margin: 20px 10%;
+}
+
+.hashtag > input{
+    border-radius: 20px;
+    border: none;
+    outline:none;
+    padding: 5px;
+    margin-top: 5px;
+    padding-left: 10px;
 }
